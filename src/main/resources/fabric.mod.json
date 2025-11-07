@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "id": "conductor",
   "version": "${version}",
-  "name": "conductor",
+  "name": "C.O.N.D.U.C.T.O.R.",
   "description": "Companion mod for the M.A.E.S.T.R.O. event server!",
   "authors": [
     "encode42"
   ],
   "contact": {
-    "sources": "https://github.com/encode42/conductor"
+    "sources": "https://github.com/encode42/C.O.N.D.U.C.T.O.R."
   },
   "license": "Apache-2.0",
   "environment": "server",

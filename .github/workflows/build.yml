@@ -16,7 +16,7 @@ jobs:
         uses: JRMurr/direnv-nix-action@v4.2.0
 
       - name: Build mod
-        run: gradlew build
+        run: gradle build
 
       - name: Upload mod
         uses: actions/upload-artifact@v4

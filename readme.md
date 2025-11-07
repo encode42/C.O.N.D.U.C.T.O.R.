@@ -1,4 +1,4 @@
-# conductor
+# C.O.N.D.U.C.T.O.R.
 
 Companion mod for the [M.A.E.S.T.R.O. event server](https://modrinth.com/modpack/maestro) to improve connected players'
 experience!
