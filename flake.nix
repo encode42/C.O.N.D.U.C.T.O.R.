@@ -1,13 +1,12 @@
 {
   description = "A Nix-flake-based Java development environment";
 
-  inputs.nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1"; # unstable Nixpkgs
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/release-25.05";
 
-  outputs =
-    { self, ... }@inputs:
+  outputs = { self, ... } @ inputs:
 
     let
-      javaVersion = 21; # Change this value to update the whole stack
+      javaVersion = 21;
 
       supportedSystems = [
         "x86_64-linux"
