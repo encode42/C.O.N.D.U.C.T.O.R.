@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "conductor",
+  "version": "${version}",
+  "name": "conductor",
+  "description": "Companion mod for the M.A.E.S.T.R.O. event server!",
+  "authors": [
+    "encode42"
+  ],
+  "contact": {
+    "sources": "https://github.com/encode42/conductor"
+  },
+  "license": "Apache-2.0",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "dev.encode42.conductor.Conductor"
+    ]
+  },
+  "mixins": [
+    "conductor.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

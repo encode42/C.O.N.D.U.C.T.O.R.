@@ -1,0 +1,28 @@
+name: build
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate Gradle wrapper
+        uses: gradle/actions/wrapper-validation@v4
+
+      - name: Set up Nix
+        uses: JRMurr/direnv-nix-action@v4.2.0
+
+      - name: Build mod
+        run: gradlew build
+
+      - name: Upload mod
+        uses: actions/upload-artifact@v4
+        with:
+          name: Mod
+          path: build/libs/
