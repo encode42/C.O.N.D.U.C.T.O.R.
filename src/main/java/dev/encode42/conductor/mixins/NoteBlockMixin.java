@@ -15,7 +15,7 @@ public class NoteBlockMixin {
             ),
             index = 6
     )
-    private float test(float volume) {
+    private float noteVolume(float volume) {
         return 10.0f;
     }
 }
