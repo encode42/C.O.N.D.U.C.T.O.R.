@@ -11,8 +11,10 @@ import net.minecraft.world.entity.player.Player;
 public class PlayerJoinEvent {
 	public static void init() {
 		ServerPlayConnectionEvents.JOIN.register((ServerGamePacketListenerImpl packetListener, PacketSender packetSender, MinecraftServer minecraftServer) -> {
-			Conductor.updateInvisibility(packetListener.getPlayer());
 			Player player = packetListener.getPlayer();
+
+			InvisibilityManager.updateInvisibility(player);
+
 			CollisionManager.updateCollision(minecraftServer, player);
 		});
 	}

@@ -4,6 +4,7 @@ import com.mojang.brigadier.arguments.BoolArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import dev.encode42.conductor.Conductor;
 import dev.encode42.conductor.ConductorConfig;
+import dev.encode42.conductor.managers.InvisibilityManager;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
@@ -32,7 +33,7 @@ public class PlayersInvisibleCommand {
 		MinecraftServer server = commandContext.getSource().getServer();
 
 		for (Player player : server.getPlayerList().getPlayers()) {
-			Conductor.updateInvisibility(player);
+			InvisibilityManager.updateInvisibility(player);
 		}
 
 		commandContext.getSource().sendSuccess(() -> Component.literal("Player invisibility is now set to: %s".formatted(isEnabled)), false);
