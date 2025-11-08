@@ -1,17 +1,16 @@
 {
-  "required": true,
-  "minVersion": "0.8",
-  "package": "dev.encode42.conductor.mixins",
-  "compatibilityLevel": "JAVA_21",
-  "mixins": [
-    "LivingEntityMixin",
-    "NoteBlockMixin",
-    "PlayerListMixin"
-  ],
-  "injectors": {
-    "defaultRequire": 1
-  },
-  "overwrites": {
-    "requireAnnotations": true
-  }
+	"required": true,
+	"minVersion": "0.8",
+	"package": "dev.encode42.conductor.mixins",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"NoteBlockMixin",
+		"PlayerListMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
 }
