@@ -14,18 +14,17 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(PlayerList.class)
 public class PlayerListMixin {
-    @Unique
-    private final Component message = Component.literal("Chat is disabled for this event!").withStyle(ChatFormatting.RED);
+	@Unique
+	private final Component message = Component.literal("Chat is disabled for this event!").withStyle(ChatFormatting.RED);
 
-    @Inject(method = "broadcastChatMessage(Lnet/minecraft/network/chat/PlayerChatMessage;Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/network/chat/ChatType$Bound;)V", at = @At(value = "HEAD"), cancellable = true)
-    private void cancelMessage(PlayerChatMessage playerChatMessage, ServerPlayer serverPlayer, ChatType.Bound bound, CallbackInfo ci) {
-        if (serverPlayer.getPermissionLevel() > 1) {
-            return;
-        }
+	@Inject(method = "broadcastChatMessage(Lnet/minecraft/network/chat/PlayerChatMessage;Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/network/chat/ChatType$Bound;)V", at = @At(value = "HEAD"), cancellable = true)
+	private void cancelMessage(PlayerChatMessage playerChatMessage, ServerPlayer serverPlayer, ChatType.Bound bound, CallbackInfo ci) {
 		if (serverPlayer.getPermissionLevel() > 2) {
+			return;
+		}
 
-        serverPlayer.sendSystemMessage(message);
+		serverPlayer.sendSystemMessage(message);
 
-        ci.cancel();
-    }
+		ci.cancel();
+	}
 }

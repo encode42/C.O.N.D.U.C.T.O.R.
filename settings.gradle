@@ -1,12 +1,12 @@
 pluginManagement {
-    repositories {
-        maven {
-            name = "Fabric"
-            url = "https://maven.fabricmc.net/"
-        }
+	repositories {
+		maven {
+			name = "Fabric"
+			url = "https://maven.fabricmc.net/"
+		}
 
-        gradlePluginPortal()
-    }
+		gradlePluginPortal()
+	}
 }
 
 rootProject.name = "conductor"

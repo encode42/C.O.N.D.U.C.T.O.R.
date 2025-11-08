@@ -8,15 +8,15 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 @Mixin(NoteBlock.class)
 public class NoteBlockMixin {
-    @ModifyArg(
-            method = "triggerEvent",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/world/level/Level;playSeededSound(Lnet/minecraft/world/entity/Entity;DDDLnet/minecraft/core/Holder;Lnet/minecraft/sounds/SoundSource;FFJ)V"
-            ),
-            index = 6
-    )
-    private float noteVolume(float volume) {
-        return ConductorConfig.noteBlockVolume;
-    }
+	@ModifyArg(
+		method = "triggerEvent",
+		at = @At(
+			value = "INVOKE",
+			target = "Lnet/minecraft/world/level/Level;playSeededSound(Lnet/minecraft/world/entity/Entity;DDDLnet/minecraft/core/Holder;Lnet/minecraft/sounds/SoundSource;FFJ)V"
+		),
+		index = 6
+	)
+	private float noteVolume(float volume) {
+		return ConductorConfig.noteBlockVolume;
+	}
 }
