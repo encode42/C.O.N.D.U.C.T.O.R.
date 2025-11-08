@@ -22,6 +22,7 @@ public class PlayerListMixin {
         if (serverPlayer.getPermissionLevel() > 1) {
             return;
         }
+		if (serverPlayer.getPermissionLevel() > 2) {
 
         serverPlayer.sendSystemMessage(message);
 
