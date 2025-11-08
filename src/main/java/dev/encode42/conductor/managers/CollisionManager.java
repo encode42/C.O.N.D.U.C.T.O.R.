@@ -17,7 +17,9 @@ public class CollisionManager {
 
 		if (playerTeam == null) {
 			playerTeam = scoreboard.addPlayerTeam(NO_COLLISION_TEAM_NAME);
+
 			playerTeam.setCollisionRule(Team.CollisionRule.NEVER);
+			playerTeam.setSeeFriendlyInvisibles(false);
 		}
 
 		return playerTeam;
